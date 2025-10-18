@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": "Action",
+    "name": "Cyberpunk 2077",
+    "price": 59.99,
+    "description": "An open-world, action-adventure RPG set in the futuristic Night City",
+    "imageUrl": "/images/image.png"
+  },
+  {
+    "id": 2,
+    "category": "RPG",
+    "name": "The Elder Scrolls V: Skyrim",
+    "price": 39.99,
+    "description": "Epic fantasy RPG where you battle dragons and explore a vast world",
+    "imageUrl": "/images/image.png"
+  },
+  {
+    "id": 3,
+    "category": "Sports",
+    "name": "FIFA 24",
+    "price": 69.99,
+    "description": "The latest installment in the popular football simulation series",
+    "imageUrl": "/images/image.png"
+  },
+  {
+    "id": 4,
+    "category": "Strategy",
+    "name": "Civilization VI",
+    "price": 49.99,
+    "description": "Build an empire to stand the test of time in this turn-based strategy game",
+    "imageUrl": "/images/image.png"
+  },
+  {
+    "id": 5,
+    "category": "Adventure",
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "price": 59.99,
+    "description": "Explore the vast kingdom of Hyrule in this award-winning adventure game",
+    "imageUrl": "/images/image.png"
+  },
+  {
+    "id": 6,
+    "category": "Shooter",
+    "name": "Call of Duty: Modern Warfare",
+    "price": 69.99,
+    "description": "Intense first-person shooter with realistic combat and multiplayer modes",
+    "imageUrl": "/images/image.png"
+  }
+]
