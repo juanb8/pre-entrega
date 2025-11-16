@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ItemList } from "../ItemList/ItemList";
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -20,6 +21,7 @@ export const ItemListContainer = () => {
   return (
     <section>
       <h1>Bienvenida</h1>
+      <ItemList list={products} />
     </section>
   );
 };

@@ -6,25 +6,32 @@ export const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch("/data/data.json").then((res) => {
-      if (!res.ok) {
-        throw new Error("Hubo un porblema al buscar productos");
-      }
-      return res.json();
-    }).then((data) => {
-      const found = data.find(prod => prod.id === id);
-      if (found) {
-        setDetail(found);
-      } else {
-        throw new Error("Producto no encontrado");
-      }
-    }).catch((err) => {
-      console.error(err);
-    });
+    fetch("/data/data.json")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Hubo un porblema al buscar productos");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const found = data.find((prod) => String(prod.id) === id);
+        if (found) {
+          setDetail(found);
+        } else {
+          throw new Error("Producto no encontrado");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, [id]);
   return (
     <main>
-      {Object.keys(detail).length ? (<ItemDetail detail={detail} />) : (<p>Cargando ...</p>)}
+      {Object.keys(detail).length ? (
+        <ItemDetail detail={detail} />
+      ) : (
+        <p>Cargando ...</p>
+      )}
     </main>
   );
 };
