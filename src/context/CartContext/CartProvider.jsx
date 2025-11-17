@@ -48,6 +48,14 @@ export const CartProvider = ({ children }) => {
     return Math.round(total * 100) / 100;
   };
 
+  const checkout = () => {
+    const ok = confirm("Confirm to checkout");
+    if (ok) {
+      alert("The purchase was successful");
+      clearCart();
+    }
+  };
+
   const values = {
     cart,
     addItem,
@@ -55,6 +63,7 @@ export const CartProvider = ({ children }) => {
     getTotalItems,
     deleteItem,
     total,
+    checkout,
   };
 
   return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
