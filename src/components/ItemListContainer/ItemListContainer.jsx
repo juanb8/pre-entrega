@@ -21,7 +21,7 @@ export const ItemListContainer = ({ titulo }) => {
   }, [category]);
   return (
     <section className="container">
-      <h1>{titulo}</h1>
+      {titulo && <h1>{titulo}</h1>}
       <ItemList list={products} />
     </section>
   );

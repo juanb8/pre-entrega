@@ -7,7 +7,22 @@ export const Nav = () => {
     <nav>
       <ul>
         <li>
-          <Link to={"/category/algo"}>algo</Link>
+          <Link to={"/category/shooter"}>shooter</Link>
+        </li>
+        <li>
+          <Link to={"/category/sports"}>sports</Link>
+        </li>
+        <li>
+          <Link to={"/category/RPG"}>rpg</Link>
+        </li>
+        <li>
+          <Link to={"/category/Action"}>action</Link>
+        </li>
+        <li>
+          <Link to={"/category/strategy"}>strategy</Link>
+        </li>
+        <li>
+          <Link to={"/category/adventure"}>adventure</Link>
         </li>
         <li>
           <Link to={"/carrito"}>Carrito</Link>

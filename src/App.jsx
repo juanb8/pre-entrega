@@ -18,15 +18,12 @@ function App() {
         <CartProvider>
           <Routes>
             <Route element={<MainLayout />}>
-              <Route
-                path="/"
-                element={<ItemListContainer titulo={"Welcome"} />}
-              />
+              <Route path="/" element={<ItemListContainer />} />
               <Route path="/detail/:id" element={<ItemDetailContainer />} />
               <Route path="/carrito" element={<Cart />} />
               <Route
                 path="/category/:category"
-                element={<ItemListContainer titulo={"Welcome"} />}
+                element={<ItemListContainer />}
               />
             </Route>
             <Route path="/admin" element={<AdminLayout />}>
