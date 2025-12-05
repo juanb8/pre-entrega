@@ -18,10 +18,16 @@ function App() {
         <CartProvider>
           <Routes>
             <Route element={<MainLayout />}>
-              <Route path="/" element={<ItemListContainer />} />
+              <Route
+                path="/"
+                element={<ItemListContainer titulo={"Welcome"} />}
+              />
               <Route path="/detail/:id" element={<ItemDetailContainer />} />
               <Route path="/carrito" element={<Cart />} />
-              <Route path="/:category" element={<ItemListContainer />} />
+              <Route
+                path="/:category"
+                element={<ItemListContainer titulo={"Welcome"} />}
+              />
             </Route>
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<Login />} />
@@ -35,11 +41,6 @@ function App() {
               />
             </Route>
           </Routes>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
         </CartProvider>
       </BrowserRouter>
     </>

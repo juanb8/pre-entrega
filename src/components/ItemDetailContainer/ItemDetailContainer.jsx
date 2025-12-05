@@ -2,31 +2,23 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
+import "./ItemDetailContainer.css";
+import { fetchProductsById } from "../../services/product.service";
+
 export const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch("/data/data.json")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Hubo un porblema al buscar productos");
-        }
-        return res.json();
-      })
+    fetchProductsById(id)
       .then((data) => {
-        const found = data.find((prod) => String(prod.id) === id);
-        if (found) {
-          setDetail(found);
-        } else {
-          throw new Error("Producto no encontrado");
-        }
+        setDetail(data);
       })
       .catch((err) => {
         console.error(err);
       });
   }, [id]);
   return (
-    <main>
+    <main className="detail-container">
       {Object.keys(detail).length ? (
         <ItemDetail detail={detail} />
       ) : (

@@ -37,3 +37,15 @@ export const fetchProducts = async (category = null) => {
     throw error;
   }
 };
+
+export const fetchProductsById = async (id) => {
+  try {
+    let url = BASE_URL;
+    url = `${BASE_URL}?id=${id}`;
+    const data = await fetchData(url);
+    return data[0];
+  } catch (error) {
+    console.error("Product fetch error:", error);
+    throw error;
+  }
+};

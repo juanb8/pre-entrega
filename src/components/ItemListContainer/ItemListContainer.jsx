@@ -3,7 +3,9 @@ import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { fetchProducts } from "../../services/product.service";
 
-export const ItemListContainer = () => {
+import "./ItemListContainer.css";
+
+export const ItemListContainer = ({ titulo }) => {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
   useEffect(() => {
@@ -18,8 +20,8 @@ export const ItemListContainer = () => {
     loadProducts();
   }, [category]);
   return (
-    <section>
-      <h1>Bienvenida</h1>
+    <section className="container">
+      <h1>{titulo}</h1>
       <ItemList list={products} />
     </section>
   );
