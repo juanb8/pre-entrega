@@ -28,8 +28,10 @@ const fetchData = async (url, options = {}) => {
 
 export const fetchProducts = async (category = null) => {
   try {
-    const data = await fetchData(BASE_URL);
-    return category ? data.filter((prod) => prod.category === category) : data;
+    let url = BASE_URL;
+    if (category) url = `${BASE_URL}?category=${category}`;
+    const data = await fetchData(url);
+    return data;
   } catch (error) {
     console.error("Product fetch error:", error);
     throw error;

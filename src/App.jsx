@@ -7,18 +7,33 @@ import { CartProvider } from "./context/CartContext/CartProvider";
 import { Link } from "react-router-dom";
 import { Cart } from "./components/Cart/Cart";
 import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer";
+import { MainLayout } from "./layouts/MainLayout";
+import { AdminLayout } from "./layouts/AdminLayout";
+import { RutaProtegida } from "./components/RutaProtegida/RutaProtegis";
+import { Login } from "./components/Login/Login";
 function App() {
   return (
     <>
       <BrowserRouter>
         <CartProvider>
-          <Nav />
           <Routes>
-            <Route path="/" element={<ItemListContainer />} />
-            <Route path="/detail/:id" element={<ItemDetailContainer />} />
-            <Route path="/carrito" element={<Cart />} />
-            <Route path="/:category" element={<ItemListContainer />} />
-            <Route path="/admin" element={<ProductFormContainer />} />
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<ItemListContainer />} />
+              <Route path="/detail/:id" element={<ItemDetailContainer />} />
+              <Route path="/carrito" element={<Cart />} />
+              <Route path="/:category" element={<ItemListContainer />} />
+            </Route>
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<Login />} />
+              <Route
+                path="alta-productos"
+                element={
+                  <RutaProtegida>
+                    <ProductFormContainer />
+                  </RutaProtegida>
+                }
+              />
+            </Route>
           </Routes>
           <ul>
             <li>
