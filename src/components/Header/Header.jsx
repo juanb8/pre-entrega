@@ -6,8 +6,7 @@ export const Header = () => {
   return (
     <header className="header">
       <Link to={"/"} className="log-container">
-        <img src={logo} className="logo" />
-        // <h2 className="logo">LOGO </h2>
+        <h2 className="logo">LOGO </h2>
       </Link>
       <Nav />
     </header>
